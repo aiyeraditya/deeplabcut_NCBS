@@ -5,7 +5,7 @@ This document outlines the protocol to train DeepLabCut for using on the Pakeeza
 
 ## Getting Started
 
-1. Install DeepLabCut on your local system
+# Installing Anaconda
 Run the following to check if conda is installed on your system
 ```
 conda info
@@ -28,59 +28,21 @@ source ~/.bashrc
 conda list
 ```
 
-conda list is to confirm if conda has been installed properly.
+'conda list' is to confirm if conda has been installed properly.
 
-
-
-### Prerequisites
-
-What things you need to install the software and how to install them
+#Create an environment
 
 ```
-Give examples
+conda create deeplabcut py36 python=3.6 anaconda
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Feel free to rename 'deeplabcut' from the above line to whatever you want to name your environment as. If you do so, replace 'deeplabcut' in the next line to the name of your environment
 
 ```
-Give the example
+source activate deeplabcut
+python --version
 ```
+The output for this should indicate that Python 3.6 is initialised
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
