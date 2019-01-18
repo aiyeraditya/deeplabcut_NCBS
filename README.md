@@ -54,7 +54,7 @@ pip install --ignore-installed tensorflow==1.10 --user
 I recommend the installation of the CPU version of Tensorflow. All the major training will be done on Pakeeza GPU clusters.
 wxPython is the library required for running Graphical User Interface.
 
-If you got this far, Great! Now you are set-up for creating your project and training
+If you got this far, Great! Now you are set-up for creating your project and training. All steps so far need to be done only once
 
 # Setting Up Training Set
 If you want to use the DeepLabCut GUI, refer to the DeepLabCut UserOverViewGuide for creating the training set
@@ -90,6 +90,11 @@ Now, project paths in the config files have to be changed to reflect their new l
 python change_name.py <project-folder>
 ```
 
+# Submitting A Job to Pakeeza
+
+If you are using Pakeeza, I would strongly recommend that you read the .docx document outlining the architecture of Pakeeza and general instructions for using it. (Obviously, you do not need to know it to run your code if you are using this document, but you WILL be amazed by the sheer scale of Pakeeza)
+
+You cannot simply run your code on your home directory in Pakeeza. To be able to use the GPU cores, you have to submit a job to Pakeeza. Here is how you prepare a bash script to do so.
 ## Authors
 
 * **Aditya Iyer**
