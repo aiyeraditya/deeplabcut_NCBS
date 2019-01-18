@@ -41,8 +41,18 @@ Feel free to rename 'deeplabcut' from the above line to whatever you want to nam
 source activate deeplabcut
 python --version
 ```
-The output for this should indicate that Python 3.6 is initialised
+The output for this should indicate that Python 3.6 is initialised.
 
+Now, let's install deeplabcut and its dependencies
+
+# Installing deeplabcut, wxPython, and tensorflow
+
+```
+pip install deeplabcut --user
+pip install https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04/wxPython-4.0.3-cp36-cp36m-linux_x86_64.whl --user
+pip install --ignore-installed tensorflow==1.10 --user
+```
+I recommend the installation of the CPU version of Tensorflow. All the major training will be done on Pakeeza GPU clusters. 
 
 ## Built With
 
