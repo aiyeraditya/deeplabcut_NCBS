@@ -1,3 +1,5 @@
 local*
 /local
 *.mp4
+*.pyc
+.DS_Store
