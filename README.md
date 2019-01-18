@@ -1,11 +1,10 @@
-# deeplabcut_NCBS
 # Using DeepLabCut @ NCBS
 
 This document outlines the protocol to train DeepLabCut for using on the Pakeeza Cluster at NCBS from a computer set up with Ubunutu 16.04
 
-## Getting Started
+# Getting Started
 
-# Installing Anaconda
+## Installing Anaconda
 Run the following to check if conda is installed on your system
 ```
 conda info
@@ -30,7 +29,7 @@ conda list
 
 'conda list' is to confirm if conda has been installed properly.
 
-#Create an environment
+## Create an environment
 
 ```
 conda create deeplabcut py36 python=3.6 anaconda
@@ -45,7 +44,7 @@ The output for this should indicate that Python 3.6 is initialised.
 
 Now, let's install deeplabcut and its dependencies
 
-# Installing deeplabcut, wxPython, and tensorflow
+## Installing deeplabcut, wxPython, and tensorflow
 
 ```
 pip install deeplabcut --user
@@ -53,6 +52,7 @@ pip install https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04
 pip install --ignore-installed tensorflow==1.10 --user
 ```
 I recommend the installation of the CPU version of Tensorflow. All the major training will be done on Pakeeza GPU clusters.
+wxPython is the library required for running Graphical User Interface.
 
 If you got this far, Great! Now you are set-up for creating your project and training
 
