@@ -1,7 +1,7 @@
 # deeplabcut_NCBS
-#Using DeepLabCut @ NCBS
+# Using DeepLabCut @ NCBS
 
-This document outlines the protocol to train DeepLabCut for using on the Pakeeza Cluster at NCBS
+This document outlines the protocol to train DeepLabCut for using on the Pakeeza Cluster at NCBS from a computer set up with Ubunutu 16.04
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ Run the following to check if conda is installed on your system
 ```
 conda info
 ```
-If not, run the following on Terminal. This is for Ubuntu 16.04 LTS
+If not, run the following on Terminal.
 ```
 cd /tmp
 curl -O https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
@@ -52,34 +52,54 @@ pip install deeplabcut --user
 pip install https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04/wxPython-4.0.3-cp36-cp36m-linux_x86_64.whl --user
 pip install --ignore-installed tensorflow==1.10 --user
 ```
-I recommend the installation of the CPU version of Tensorflow. All the major training will be done on Pakeeza GPU clusters. 
+I recommend the installation of the CPU version of Tensorflow. All the major training will be done on Pakeeza GPU clusters.
 
-## Built With
+If you got this far, Great! Now you are set-up for creating your project and training
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+# Setting Up Training Set
+If you want to use the DeepLabCut GUI, refer to the DeepLabCut UserOverViewGuide for creating the training set
 
-## Contributing
+If you have used DLT-DV (Ty Hedrick) to label the images, do the following:
+```
+MUST ADD STUFF HERE
+```
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Once that is set up, you are ready to use Pakeeza for training the network
 
-## Versioning
+# Setting Up Files on Pakeeza
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+Transfer the entire project folder to Pakeeza using this line on Terminal. Open Terminal from the parent directory of the projcet folder and run this.
+```
+scp -r <project-folder> adityaiyer@pakeeza:~/
+```
+
+For the password, please mail adityaiyer@ncbs.res.in or meet me in the lab
+
+Run the following to confirm the files have been transfered:
+```
+ssh adityaiyer@pakeeza.ncbs.res.in
+export http_proxy=http://proxy.ncbs.res.in:3128
+export https_proxy=http://proxy.ncbs.res.in:3128
+cd /home/sane/adityaiyer
+ls
+```
+You should see your project-folder listed.
+
+Now, project paths in the config files have to be changed to reflect their new location on the Pakeeza servers. To do this, the python script change_name.py will be used
+```
+python change_name.py <project-folder>
+```
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Aditya Iyer**
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* DeepLabCut
+* DLT-DV
+* Abin Ghosh
+* Shivansh Dave
