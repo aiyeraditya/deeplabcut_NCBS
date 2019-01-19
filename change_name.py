@@ -37,7 +37,7 @@ def change_names(project_name = project):
             file4.write('project_path: ' + '/home/sane/adityaiyer/' + project_name + '\n')
             continue
         elif(i.startswith('init_weights')):
-            file4.write('init_weights: ' + 'home/sane/adityaiyer/deeplabcut/pose_estimation_tensorflow/models/pretrained/resnet_v1_50.ckpt\n')
+            file4.write('init_weights: ' + '/home/sane/adityaiyer/deeplabcut/pose_estimation_tensorflow/models/pretrained/resnet_v1_50.ckpt\n')
         else:
             file4.write(i)
     file4.close()
@@ -50,7 +50,7 @@ def change_names(project_name = project):
     # Change init_weights, and project_path
     for i in lines:
         if(i.startswith('init_weights')):
-            file6.write('init_weights: ' + 'home/sane/adityaiyer/deeplabcut/pose_estimation_tensorflow/models/pretrained/resnet_v1_50.ckpt\n')
+            file6.write('init_weights: ' + '/home/sane/adityaiyer/deeplabcut/pose_estimation_tensorflow/models/pretrained/resnet_v1_50.ckpt\n')
         else:
             file6.write(i)
     file6.close()
