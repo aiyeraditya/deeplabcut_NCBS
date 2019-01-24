@@ -92,9 +92,36 @@ python change_name.py <project-folder>
 
 # Submitting A Job to Pakeeza
 
-If you are using Pakeeza, I would strongly recommend that you read the .docx document outlining the architecture of Pakeeza and general instructions for using it. (Obviously, you do not need to know it to run your code if you are using this document, but you WILL be amazed by the sheer scale of Pakeeza)
+If you are using Pakeeza, I would strongly recommend that you read the .docx document outlining the architecture of Pakeeza and general instructions for using it.
 
-You cannot simply run your code on your home directory in Pakeeza. To be able to use the GPU cores, you have to submit a job to Pakeeza. Here is how you prepare a bash script to do so.
+You cannot simply run your code on your home directory in Pakeeza. To be able to use the GPU cores, you have to submit a job to Pakeeza. Here is how you prepare the bash script to do so.
+
+* Change the environment name in script.sh
+* Change the video file names in python_run.py
+* Copy files to the server by running the following lines, after opening Terminal in the folder containing script.sh, job_submission.sh and python_run.py
+
+```
+scp script.sh adityaiyer@pakeeza:~/
+scp job_submission.sh adityaiyer@pakeeza:~/
+scp python_run.py adityaiyer@pakeeza:~/
+```
+
+Now, you have to submit the job!
+
+```
+ssh adityaiyer@pakeeza
+qsub job_submission.sh
+```
+
+Once this is done, you will get a Job ID. <jobid>. To monitor the outputs, run the following:
+```
+qstat -j <jobid>
+nano DeepabCut_Training.o<jobid>   (for examples nano DeepabCut_Training.o56620)
+nano DeepabCut_Training.e<jobid>
+```
+
+If the qstat ouput indicates that the job does not exist, check the .e file for the error.
+
 ## Authors
 
 * **Aditya Iyer**
