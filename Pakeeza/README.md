@@ -2,7 +2,7 @@
 
 This document outlines the protocol to train DeepLabCut for using on the Pakeeza Cluster at NCBS from a computer set up with Ubunutu 16.04
 
-If you want to setup DeepLabCut on your own account, refer to [This folder](thislink.github)
+If you want to setup DeepLabCut on your own account, refer to [This file](https://github.com/aiyeraditya/deeplabcut_NCBS/blob/master/DeeplabcutOnPakeeza.md)
 
 # Getting Started
 
